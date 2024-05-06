@@ -4,12 +4,12 @@ func search(nums []int, target int) int {
 	for l <= r {
 		m := (l + r) / 2
 
-		if target > nums[m] {
-			l = m + 1
-		} else if target < nums[m] {
-			r = m - 1
-		} else {
+		if nums[m] == target {
 			return m
+		} else if target > nums[m] {
+			l = m + 1
+		} else {
+			r = m - 1
 		}
 	}
 	return -1
